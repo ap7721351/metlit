@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aplikasi Penghitung Diskon</title>
+    <style>
+        body { font-family: Arial; margin: 40px; background: #f0f0f0; }
+        .container { background: white; padding: 20px; width: 400px; border-radius: 10px; margin: auto; }
+        input { width: 100%; padding: 10px; margin: 8px 0; }
+        button { padding: 10px; width: 100%; background: green; color: white; border: none; cursor: pointer; }
+        h2 { text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Penghitung Diskon</h2>
+        <form method="POST">
+            <label>Harga Awal (Rp):</label>
+            <input type="number" name="harga" required>
+
+            <label>Persentase Diskon (%):</label>
+            <input type="number" name="diskon" required>
+
+            <button type="submit">Hitung</button>
+        </form>
+
+        {% if hasil %}
+        <hr>
+        <h3>Hasil Perhitungan:</h3>
+        <p>Jumlah Diskon: <b>Rp {{ jumlah_diskon }}</b></p>
+        <p>Harga Setelah Diskon: <b>Rp {{ harga_akhir }}</b></p>
+        {% endif %}
+    </div>
+</body>
+</html>
